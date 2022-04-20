@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: "dev"
+    group:
+      dev: develop,debug,local
+      prod: production,aws
+  application:
+    name: "coac-bo"
+  jpa:
+    properties:
+      hibernate:
+        order_updates: true
+        order_inserts: true
+        jdbc:
+          batch_size: 100
+    hibernate:
+      ddl-auto: none
+
+logging:
+  level:
+    ROOT: INFO
+management:
+  endpoints:
+    web:
+      base-path: /manage
+      cors:
+        allowed-origins: '*'
